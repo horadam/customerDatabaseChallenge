@@ -12,6 +12,9 @@ const Landing = (props) => {
             <Link to="/challenge2">
                 <button className='abutton'>Challenge 2</button>
             </Link>
+            <Link to="/challenge3">
+                <button className='abutton'>Challenge 3</button>
+            </Link>
         </div>
     )
 }

@@ -6,6 +6,7 @@ import  { Link } from 'react-router-dom'
 const SearchCustomer = (props) => {
 
     const [customerSearched, setCustomer] = useState('')
+    const [lastSearch, setLastSearch] = useState('')
 
     useEffect(() => {
         searchCustomer('')
@@ -15,6 +16,7 @@ const SearchCustomer = (props) => {
         e.preventDefault()
 
         searchCustomer(customerSearched)
+        setLastSearch(customerSearched)
         setCustomer('')
     }
 
@@ -22,7 +24,6 @@ const SearchCustomer = (props) => {
 
     return (
         <div>
-            <h1>Search Customer</h1>
 
             <form className="searchCustomer" onSubmit={handleSubmit}>
             <input
@@ -40,6 +41,10 @@ const SearchCustomer = (props) => {
             </button>
             
             </form>
+
+            <p className = {lastSearch === '' ? "hidden" : "customerFound"}>
+                Showing results for: {lastSearch}
+            </p>
 
             <div>
             {customers.map((customer, i) => (

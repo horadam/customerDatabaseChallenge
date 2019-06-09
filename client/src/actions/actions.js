@@ -14,7 +14,6 @@ export function editCustomer(email, fname, lname, ip, lat, long, timeStamp, id) 
 }
 
 export function removeCustomer(id) {
-    console.log(id)
     return axios.delete(`/api/customers/remove?id=${id}`)
 }
 
@@ -39,7 +38,6 @@ export function searchCustomer(customerSearched) {
   //FILE UPLOAD
   export function fileUpload(file1, file2) {
 
-    console.log('files', file1, file2)
     let formdata = new FormData()
         formdata.append('datafile', file1, 'datafile.csv')
         formdata.append('datafile', file2, 'mapfile.csv')
@@ -49,8 +47,6 @@ export function searchCustomer(customerSearched) {
             'Content-Type': 'multipart/form-data'
         }
     }
-
-    console.log(Array.from(formdata.entries()), config)
 
     return axios.post('/api/files', formdata, config)
 }

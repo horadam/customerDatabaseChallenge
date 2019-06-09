@@ -20,26 +20,9 @@ const Challenge1Home = (props) => {
   
     }
 
-    // function fileUpload (file) {
-    //     console.log(file)
-
-    //     let formdata = new FormData()
-    //     formdata.append('datafile',file)
-    //     // .then(formData.append('map file', mapFile))
-       
-    //     setTimeout(() => console.log(formdata), 0)
-    //     // const config = {
-    //     //     headers: {
-    //     //         'content-type': 'multipart/form-data'
-    //     //     }
-    //     // }
-    //     // return (formData, config)
-        
-    //     }
-
     return (
         <div>
-            <h1>Challenge 1</h1>
+            <h1>Import Customer Data Sheet</h1>
             <form onSubmit={handleSubmit}>
             <label htmlFor="data" name="data">
                 Select a data file:

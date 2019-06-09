@@ -1,25 +1,28 @@
 import React, { useState, useEffect } from 'react'
-import { searchCustomer2 } from '../../actions/actions2'
+import { searchCustomerJSON } from '../../actions/actions2'
 import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
 
 const Challenge3Home = (props) => {
 
     const [customerSearched, setCustomer] = useState('')
+    const [lastSearch, setLastSearch] = useState('')
 
     useEffect(() => {
-        searchCustomer2('')
+        searchCustomerJSON('')
     }, [])
 
     function handleSubmit(e) {
         e.preventDefault()
 
-        searchCustomer2(customerSearched)
+        searchCustomerJSON(customerSearched)
+        setLastSearch(customerSearched)
         setCustomer('')
     }
 
     const customers = props.customersFound
 
+    
 
     return (
         <div>
@@ -42,10 +45,14 @@ const Challenge3Home = (props) => {
             
             </form>
 
+            <p className = {lastSearch === '' ? "hidden" : "customerFound"}>
+                Showing results for: {lastSearch}
+            </p>
+
             <div>
             {customers.map((customer, i) => (
 
-                <Link to={"/customer/" + customer.id} key={`customer - `+ i}>
+                <Link to={"/customer/view/" + customer.id} key={`customer - `+ i}>
                     <p>
                         {customer.first_name + " " + customer.last_name + " - " + customer.email}
                     </p>  

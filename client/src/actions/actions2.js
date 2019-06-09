@@ -4,9 +4,9 @@ import store from '../store'
 
 
 
-export function searchCustomer2(customerSearched) {
+export function searchCustomerJSON(customerSearched) {
 
-    var options = {
+    const options = {
         shouldSort: true,
         threshold: 0.4,
         location: 0,
@@ -21,13 +21,22 @@ export function searchCustomer2(customerSearched) {
         ]
       };
 
-      var fuse = new Fuse(customers, options); // "list" is the item array
-      var result = fuse.search(customerSearched);
-
-      console.log(result)
+      const fuse = new Fuse(customers, options);
+      const result = fuse.search(customerSearched);
 
       store.dispatch({
         type: 'FOUND_CUSTOMERS',
         payload: result
     })
   }
+
+  export function getCurrentCustomerJSON(customerSearched) {
+
+    const customer = customers.filter(customer => customer.id === Number(customerSearched))[0]
+
+      store.dispatch({
+        type: 'CURRENT_CUSTOMER',
+        payload: customer
+    })
+  }
+

@@ -1,0 +1,15 @@
+html {
+    box-sizing: border-box;
+    font-family: "Roboto", arial, sans-serif;
+    background-color: whitesmoke;
+  }
+  
+  *,
+  *:before,
+  *:after {
+    box-sizing: inherit;
+  }
+
+  .hidden {
+      display: none
+  }

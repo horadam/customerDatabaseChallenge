@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import { connect } from 'react-redux'
+import { useSelector } from 'react-redux'
 import { getCurrentCustomer, removeCustomer } from '../../actions/actions'
 import { Link } from 'react-router-dom'
 import HeaderBar from '../HeaderBar'
@@ -14,7 +14,7 @@ const CustomerDataView = (props) => {
         getCurrentCustomer(CustomerId)
     },[CustomerId])
 
-    const customer = props.currentCustomer
+    const customer = useSelector(appstate => appstate.currentCustomer)
 
     function handleDelete(e) {
         e.preventDefault()
@@ -58,15 +58,5 @@ const CustomerDataView = (props) => {
         </div>
     )
 }
-
-
-
-
-
-function mapStateToProps(appState) {
-    return {
-      currentCustomer: appState.currentCustomer
-    }
-  }
   
-export default connect(mapStateToProps)(CustomerDataView)
+export default CustomerDataView

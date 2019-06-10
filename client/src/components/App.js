@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 import '../styles/base.css'
 import { Provider } from 'react-redux'
 import store from '../store'
@@ -15,8 +15,8 @@ import CustomerDataView from './Routes/CustomerDataView'
 import CustomerDataEdit from './Routes/CustomerDataEdit'
 import CustomerDataViewJSON from './Routes/CustomerDataViewJSON'
 
-class App extends Component {
-  render() {
+const App = () => {
+  
     return (
       <Provider store={store}>
         <Router>
@@ -40,7 +40,6 @@ class App extends Component {
         </Router>
       </Provider>
     )
-  }
 }
 
 export default App

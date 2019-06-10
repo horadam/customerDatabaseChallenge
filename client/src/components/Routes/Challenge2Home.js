@@ -10,7 +10,7 @@ import { Button, Header, Icon } from 'semantic-ui-react'
 const Challenge2Home = (props) => {
 
     return (
-        <div class="wrapper">
+        <div className="wrapper">
             <HeaderBar />
 
             <Header as='h2' textAlign='center'>
@@ -26,9 +26,7 @@ const Challenge2Home = (props) => {
             </Link>
 
             <SearchCustomer />
-            {/* <Link to="/searchCustomer">
-                <button className='abutton'>Search customer</button>
-            </Link> */}
+            
         </div>
     )
 }

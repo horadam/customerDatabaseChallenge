@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import { useSelector } from 'react-redux'
 import { searchCustomerJSON } from '../../actions/actions2'
 import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
@@ -23,7 +24,7 @@ const Challenge3Home = (props) => {
         setCustomer('')
     }
 
-    const customers = props.customersFound
+    const customers = useSelector(appstate => appstate.customersFound)
 
     
 
@@ -66,6 +67,7 @@ const Challenge3Home = (props) => {
             {customers.map((customer, i) => (
 
                 <Link className="usersFound" to={"/customer/view/" + customer.id} key={`customer - `+ i}>
+                    <Icon name="user" />
                     <p>
                         {customer.first_name + " " + customer.last_name + " - " + customer.email}
                     </p>  
@@ -76,10 +78,10 @@ const Challenge3Home = (props) => {
     )
 }
 
-function mapStateToProps(appState){
-    return{
-        customersFound: appState.customersFound
-    }
-}
+// function mapStateToProps(appState){
+//     return{
+//         customersFound: appState.customersFound
+//     }
+// }
 
-export default connect(mapStateToProps)(Challenge3Home)
+export default Challenge3Home

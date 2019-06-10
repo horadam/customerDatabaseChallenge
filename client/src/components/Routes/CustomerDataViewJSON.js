@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react'
-import { connect } from 'react-redux'
+import { useSelector } from 'react-redux'
 import { getCurrentCustomerJSON } from '../../actions/actions2'
 import HeaderBar from '../HeaderBar'
-import { Button, Header, Icon } from 'semantic-ui-react'
+import { Header, Icon } from 'semantic-ui-react'
 
 
 const CustomerDataView = (props) => {
@@ -13,7 +13,7 @@ const CustomerDataView = (props) => {
         getCurrentCustomerJSON(CustomerId)
     },[CustomerId])
 
-    const customer = props.currentCustomer
+    const customer = useSelector(appstate => appstate.currentCustomer)
 
     return (
         <div className="wrapper">
@@ -40,15 +40,5 @@ const CustomerDataView = (props) => {
         </div>
     )
 }
-
-
-
-
-
-function mapStateToProps(appState) {
-    return {
-      currentCustomer: appState.currentCustomer
-    }
-  }
   
-export default connect(mapStateToProps)(CustomerDataView)
+export default CustomerDataView

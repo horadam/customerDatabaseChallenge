@@ -1,6 +1,9 @@
 import React, { useState } from 'react'
 import { fileUpload } from '../../actions/actions'
-// import { Link } from 'react-router-dom'
+import HeaderBar from '../HeaderBar'
+import { Input, Button, Form, Header, Icon } from 'semantic-ui-react'
+
+
 
 const Challenge1Home = (props) => {
 
@@ -21,27 +24,35 @@ const Challenge1Home = (props) => {
     }
 
     return (
-        <div>
-            <h1>Import Customer Data Sheet</h1>
-            <form onSubmit={handleSubmit}>
-            <label htmlFor="data" name="data">
-                Select a data file:
-            </label>
-            <input 
-                type="file"
-                name="datafile"
-                onChange= {e => changeDataFile(e.target.files[0])}>
-            </input>
-            <label htmlFor="data" name="map">
-                Select a map file:
-            </label>
-            <input 
-                type="file"
-                name="data"
-                onChange= {e => changeMapFile(e.target.files[0])}>
-            </input>
-            <button type="submit">Submit</button>
-            </form>
+
+        <div class="wrapper">
+            <HeaderBar/>
+    
+            <Header as='h2' textAlign='center'>
+                <Icon name='file alternate'/>
+                <Header.Content>Import Customer Data Sheets</Header.Content>
+            </Header>
+        
+           
+            <Form class="dataForm" onSubmit={handleSubmit}>
+            <Form.Field>
+                <Input
+                    label=".csv file"
+                    type="file"
+                    name="datafile"
+                    onChange= {e => changeDataFile(e.target.files[0])}>
+                </Input>
+            </Form.Field>
+            <Form.Field>
+                <Input
+                    label=".map file"
+                    type="file"
+                    name="data"
+                    onChange= {e => changeMapFile(e.target.files[0])}>
+                </Input>
+            </Form.Field>
+            <Button primary id="Submit" type="submit">Submit</Button>
+            </Form>
         </div>
     )
 }

@@ -1,27 +1,35 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import HeaderBar from '../HeaderBar'
+import { Button } from 'semantic-ui-react'
+
 
 const Landing = (props) => {
 
     return (
         <div>
-            <h1>Challenge Home</h1>
+        <HeaderBar/>
+        <div className="landingContainer">
             
             <Link to="/challenge1">
-                <button className='abutton'>Challenge 1 - ETL Engineering Challenge</button>
+                <Button primary >
+                    ETL Engineering
+                </Button>
             </Link>
+            
 
             <Link to="/challenge2">
-                <button className='abutton'>Challenge 2 - Web Service Engineering Challenge</button>
+                <Button primary>Web Service Engineering</Button>
             </Link>
 
             <Link to="/challenge3">
-                <button className='abutton'>Challenge 3 - JS Engineering Challenge</button>
+                <Button primary >JS Engineering</Button>
             </Link>
 
             <Link to="/challenge4">
-                <button className='abutton'>Challenge 4 - UI/UX Design Challenge</button>
+                <Button primary >UI/UX Design</Button>
             </Link>
+        </div>
         </div>
     )
 }

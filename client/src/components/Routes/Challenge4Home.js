@@ -1,16 +1,14 @@
 import React from 'react'
+import { Card, Icon, Image } from 'semantic-ui-react'
+import { Input } from 'semantic-ui-react'
 
 
-const Challenge4Home = (props) => {
 
-
-    
+const Challenge4Home = () => {
 
     return (
-        <div>
-            <h1>Customer Dashboard</h1>
 
-        </div>
+    <Input placeholder='Search...' />
     )
 }
 

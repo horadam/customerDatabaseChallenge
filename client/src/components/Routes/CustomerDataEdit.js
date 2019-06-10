@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import { connect } from 'react-redux'
+import HeaderBar from '../HeaderBar'
 import { getCurrentCustomer, editCustomer } from '../../actions/actions'
 import moment from 'moment'
+import { Button, Header, Icon, Form } from 'semantic-ui-react'
 
 const CustomerDataEdit = (props) => {
 
@@ -31,80 +33,89 @@ const CustomerDataEdit = (props) => {
    
 
     return (
-        <div>
-            <h1>Edit {customer.first_name + " " + customer.last_name}'s Data</h1>
+        <div class="wrapper">
+            <HeaderBar />
 
-            <form className="customerDataInputForm" onSubmit={handleSubmit}>
-                <label htmlFor="email">
-                    Email:
-                </label>
-                <input
-                    type="email"
-                    name="email"
-                    className="formInput"
-                    onChange= {e => changeEmail(e.target.value)}
-                    value=  {email}
-                />
+            <Header as='h2' textAlign='center'>
+                <Icon name='address card'/>
+                <Header.Content>Edit {customer.first_name + " " + customer.last_name}'s Data</Header.Content>
+            </Header>
 
-                <label htmlFor="fname">
-                    First Name:
-                </label>
-                <input
-                    type="text"
-                    name="fname"
-                    className="formInput"
-                    onChange= {e => changeFirstName(e.target.value)}
-                    value=  {fname}
-                />
+            <Form className="customerDataInputForm" onSubmit={handleSubmit}>
+                <Form.Group widths="equal">
 
-                <label htmlFor="lname">
-                    Last Name:
-                </label>
-                <input
-                    type="text"
-                    name="fname"
-                    className="formInput"
-                    onChange= {e => changeLastName(e.target.value)}
-                    value=  {lname}
-                />
+                    <Form.Input
+                        fluid label='Email'
+                        placeholder="john.doe@email.com"
+                        margin="normal"
+                        variant="outlined"
+                        inputProps={{ 'aria-label': 'bare' }}
+                        type="email"
+                        name="email"
+                        // className="formInput"
+                        // label="email"
+                        onChange= {e => changeEmail(e.target.value)}
+                        value=  {email}
+                    />
 
-                <label htmlFor="ip">
-                    IP Adress:
-                </label>
-                <input
-                    type="text"
-                    name="ip"
-                    className="formInput"
-                    onChange= {e => changeIP(e.target.value)}
-                    value=  {ip}
-                />
 
-                <label htmlFor="lat">
-                    Latitude:
-                </label>
-                <input
-                    type="text"
-                    name="lat"
-                    className="formInput"
-                    onChange= {e => changeLat(e.target.value)}
-                    value=  {lat}
-                />
+                    <Form.Input
+                        fluid label='First Name'
+                        type="text"
+                        name="fname"
+                        placeholder="John"
+                        // className="forminput"
+                        onChange= {e => changeFirstName(e.target.value)}
+                        value=  {fname}
+                    />
 
-                <label htmlFor="lat">
-                    Longitude:
-                </label>
-                <input
-                    type="text"
-                    name="long"
-                    className="formInput"
-                    onChange= {e => changeLong(e.target.value)}
-                    value=  {long}
-                />
+                    <Form.Input
+                        fluid label="Last Name"
+                        type="text"
+                        name="fname"
+                        className="forminput"
+                        placeholder="Doe"
+                        onChange= {e => changeLastName(e.target.value)}
+                        value=  {lname}
+                    />
+                </Form.Group>
 
-                <button type="submit" className="button" >
-                    Save changes
-                </button>
-            </form>
+                <Form.Group widths="equal">
+                    <Form.Input
+                        fluid label="IP Address"
+                        type="text"
+                        name="ip"
+                        className="forminput"
+                        placeholder="12.13.14.15"
+                        onChange= {e => changeIP(e.target.value)}
+                        value=  {ip}
+                    />
+
+                    <Form.Input
+                        fluid label="Latitude"
+                        type="text"
+                        name="lat"
+                        className="forminput"
+                        placeholder="55.667788"
+                        onChange= {e => changeLat(e.target.value)}
+                        value=  {lat}
+                    />
+
+                    <Form.Input
+                        fluid label="Longitude"
+                        type="text"
+                        name="long"
+                        className="forminput"
+                        placeholder="55.667788"
+                        onChange= {e => changeLong(e.target.value)}
+                        value=  {long}
+                    />
+                    </Form.Group>
+
+                    <Button type="submit" className="button" color="primary" variant="contained">
+                        Edit Data
+                    </Button>
+            </Form>
 
         </div>
     )

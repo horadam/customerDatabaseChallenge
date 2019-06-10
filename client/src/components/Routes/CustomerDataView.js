@@ -2,6 +2,9 @@ import React, { useEffect } from 'react'
 import { connect } from 'react-redux'
 import { getCurrentCustomer, removeCustomer } from '../../actions/actions'
 import { Link } from 'react-router-dom'
+import HeaderBar from '../HeaderBar'
+import { Button, Header, Icon, Form } from 'semantic-ui-react'
+
 
 const CustomerDataView = (props) => {
 
@@ -21,28 +24,37 @@ const CustomerDataView = (props) => {
         }
 
     return (
-        <div>
-            <h1>
-                {customer.first_name + " " + customer.last_name}
-            </h1>
+        <div className="wrapper">
+            <HeaderBar />
+
+            <Header as='h2' textAlign='center'>
+                <Icon circular name='address card'/>
+                <Header.Content>{customer.first_name + " " + customer.last_name}</Header.Content>
+            </Header>
+        <div className="customerData">
             <p>
-                email: {customer.email}
+                <span> email: </span> {customer.email}
             </p>
             <p>
-                ip: {customer.ip}
+                <span> ip: </span> {customer.ip}
             </p>
             <p>
-                longitude: {customer.longitude}
+                <span> longitude: </span>{customer.longitude}
             </p>
             <p>
-                latitude: {customer.latitude}
+                <span> latitude: </span>{customer.latitude}
             </p>
-            <Link to= {"/customer/edit/" + customer.id}>
-                <button className='abutton'>Edit customer data</button>
-            </Link>
-            <button onClick={handleDelete} className="button" >
-                Remove Customer
-            </button>
+        </div>
+            <div id="customerViewButtons">
+                <Link to= {"/customer/edit/" + customer.id}>
+                    <Button primary className='abutton'>
+                        Edit customer data
+                    </Button>
+                </Link>
+                <Button primary onClick={handleDelete} className="button" >
+                    Remove Customer
+                </Button>
+            </div>
         </div>
     )
 }

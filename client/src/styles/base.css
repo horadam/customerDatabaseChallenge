@@ -1,7 +1,7 @@
 html {
     box-sizing: border-box;
     font-family: "Roboto", arial, sans-serif;
-    background-color: whitesmoke;
+    background-color: white;
   }
   
   *,
@@ -13,3 +13,134 @@ html {
   .hidden {
       display: none
   }
+
+  .headerBar {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  width: 100%;
+  height: 100px;
+  }
+
+    #headerText {
+      color: rgb(26, 119, 187);
+      font-family: 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+      font-size: 40px;
+      letter-spacing: 0.1em;
+      margin-right: 20px;
+    }
+
+    .logo {
+      height: 80px;
+    }
+
+  .landingContainer {
+    margin: auto;
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .landingContainer a {
+    text-decoration: none;
+    color: white
+  }
+
+  .landingContainer .ui.primary.button {
+    width: 300px;
+    margin-top: 40px;
+  }
+
+  .formContainer{
+    justify-content: space-evenly;
+    flex-wrap:wrap;
+    width:600px;
+    margin: auto;
+  }
+
+  label {
+    display: block;
+    /* text-transform: uppercase; */
+    font-size:12px;
+    font-weight: 100;
+    letter-spacing: 0.1em;
+    margin-top: 30px;
+}
+
+::placeholder {
+    color: rgb(61,94,118);
+    font-style: italic;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center
+}
+
+.form{
+  width: 500px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.ui.button {
+  margin-top: 20px;
+  width: 150px;
+}
+
+.ui.form .field .ui.input input {
+  width: 220px;
+}
+
+#addCustomerButton {
+  width: 300px;
+}
+
+.usersFound {
+  display: flex;
+  margin-bottom: 10px;
+}
+
+.searchCustomer {
+  display: flex;
+  flex-direction: column;
+  align-items: center
+}
+
+#searchCustomer{
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  height: 37px;
+}
+
+#searchButton {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  width: 100px;
+}
+
+.ui.form .fields {
+  width: 100%
+}
+
+#customerViewButtons {
+  display: flex
+}
+
+#customerViewButtons button {
+  width: 160px;
+}
+
+.customerData {
+  font-size: 18px;
+}
+
+.customerData span {
+  font-weight: bold;
+}

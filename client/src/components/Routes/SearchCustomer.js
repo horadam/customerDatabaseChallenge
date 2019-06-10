@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react'
 import { searchCustomer } from '../../actions/actions'
 import {connect} from 'react-redux'
 import  { Link } from 'react-router-dom'
+import { Input, Button, Header, Icon } from 'semantic-ui-react'
+
 
 const SearchCustomer = (props) => {
 
@@ -23,33 +25,40 @@ const SearchCustomer = (props) => {
     const customers = props.customersFound
 
     return (
-        <div>
+        <div className="searchCustomer">
 
-            <form className="searchCustomer" onSubmit={handleSubmit}>
-            <input
+            <form onSubmit={handleSubmit}>
+            <Input
+            //   className="searchInput"
+              icon='users' 
+              iconPosition='left' 
+              placeholder='Search customers...'
               autoComplete="off"
               type="text"
               name="searchCustomer"
               id="searchCustomer"
-              placeholder="Search a customer..."
               onChange={e => setCustomer(e.target.value)}
               value={customerSearched}
             />
             
-            <button className='abutton3' type="submit">
-                Search
-            </button>
+            <Button primary
+                id="searchButton"
+                type="submit">
+                    Search
+            </Button>
             
             </form>
 
-            <p className = {lastSearch === '' ? "hidden" : "customerFound"}>
-                Showing results for: {lastSearch}
-            </p>
+           < Header as='h5' textAlign='center' className = {lastSearch === '' ? "hidden" : "customerFound"}>
+                <Icon name='search'/>
+                <Header.Content> Showing results for: {lastSearch}</Header.Content>
+            </Header>
 
             <div>
             {customers.map((customer, i) => (
-
-                <Link to={"/customer/" + customer.id} key={`customer - `+ i}>
+                
+                <Link className="usersFound" to={"/customer/" + customer.id} key={`customer - `+ i}>
+                    <Icon name="user" />
                     <p>
                         {customer.first_name + " " + customer.last_name + " - " + customer.email}
                     </p>  

@@ -1,6 +1,8 @@
 import React, { useEffect } from 'react'
 import { connect } from 'react-redux'
 import { getCurrentCustomerJSON } from '../../actions/actions2'
+import HeaderBar from '../HeaderBar'
+import { Button, Header, Icon } from 'semantic-ui-react'
 
 
 const CustomerDataView = (props) => {
@@ -14,22 +16,27 @@ const CustomerDataView = (props) => {
     const customer = props.currentCustomer
 
     return (
-        <div>
-            <h1>
-                {customer.first_name + " " + customer.last_name}
-            </h1>
-            <p>
-                email: {customer.email}
-            </p>
-            <p>
-                ip: {customer.ip}
-            </p>
-            <p>
-                longitude: {customer.longitude}
-            </p>
-            <p>
-                latitude: {customer.latitude}
-            </p>
+        <div className="wrapper">
+            <HeaderBar />
+
+            <Header as='h2' textAlign='center'>
+                <Icon circular name='address card'/>
+                <Header.Content>{customer.first_name + " " + customer.last_name}</Header.Content>
+            </Header>
+            <div className="customerData">
+                <p>
+                    <span> email: </span> {customer.email}
+                </p>
+                <p>
+                    <span> ip: </span> {customer.ip}
+                </p>
+                <p>
+                    <span> longitude: </span>{customer.longitude}
+                </p>
+                <p>
+                    <span> latitude: </span>{customer.latitude}
+                </p>
+            </div>
         </div>
     )
 }

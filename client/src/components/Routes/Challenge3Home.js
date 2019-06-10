@@ -2,6 +2,9 @@ import React, { useState, useEffect } from 'react'
 import { searchCustomerJSON } from '../../actions/actions2'
 import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
+import { Input, Button, Header, Icon } from 'semantic-ui-react'
+import HeaderBar from '../HeaderBar'
+
 
 const Challenge3Home = (props) => {
 
@@ -25,34 +28,44 @@ const Challenge3Home = (props) => {
     
 
     return (
-        <div>
-            <h1>Search Customer</h1>
+        <div className="wrapper">
+            <HeaderBar />
 
-            <form className="searchCustomer" onSubmit={handleSubmit}>
-            <input
+            <Header as='h2' textAlign='center'>
+                <Icon name='users'/>
+                <Header.Content>Customer Database</Header.Content>
+            </Header>
+
+            <form onSubmit={handleSubmit}>
+            <Input
+              icon='users' 
+              iconPosition='left' 
+              placeholder='Search customers...'
               autoComplete="off"
               type="text"
               name="searchCustomer"
               id="searchCustomer"
-              placeholder="Search a customer..."
               onChange={e => setCustomer(e.target.value)}
               value={customerSearched}
             />
             
-            <button className='abutton3' type="submit">
-                Search
-            </button>
+            <Button primary
+                id="searchButton"
+                type="submit">
+                    Search
+            </Button>
             
             </form>
 
-            <p className = {lastSearch === '' ? "hidden" : "customerFound"}>
-                Showing results for: {lastSearch}
-            </p>
+           < Header as='h5' textAlign='center' className = {lastSearch === '' ? "hidden" : "customerFound"}>
+                <Icon name='search'/>
+                <Header.Content> Showing results for: {lastSearch}</Header.Content>
+            </Header>
 
             <div>
             {customers.map((customer, i) => (
 
-                <Link to={"/customer/view/" + customer.id} key={`customer - `+ i}>
+                <Link className="usersFound" to={"/customer/view/" + customer.id} key={`customer - `+ i}>
                     <p>
                         {customer.first_name + " " + customer.last_name + " - " + customer.email}
                     </p>  

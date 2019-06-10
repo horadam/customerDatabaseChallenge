@@ -29,7 +29,6 @@ const SearchCustomer = (props) => {
 
             <form onSubmit={handleSubmit}>
             <Input
-            //   className="searchInput"
               icon='users' 
               iconPosition='left' 
               placeholder='Search customers...'

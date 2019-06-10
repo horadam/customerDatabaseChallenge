@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import { getCurrentCustomer, removeCustomer } from '../../actions/actions'
 import { Link } from 'react-router-dom'
 import HeaderBar from '../HeaderBar'
-import { Button, Header, Icon, Form } from 'semantic-ui-react'
+import { Button, Header, Icon } from 'semantic-ui-react'
 
 
 const CustomerDataView = (props) => {

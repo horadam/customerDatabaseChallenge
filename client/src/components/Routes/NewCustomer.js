@@ -25,7 +25,7 @@ const NewCustomer = (props) => {
 
 
     return (
-        <div class="wrapper">
+        <div className="wrapper">
             <HeaderBar />
 
             <Header as='h2' textAlign='center'>
@@ -42,7 +42,7 @@ const NewCustomer = (props) => {
                     placeholder="john.doe@email.com"
                     margin="normal"
                     variant="outlined"
-                    inputProps={{ 'aria-label': 'bare' }}
+                    inputprops={{ 'aria-label': 'bare' }}
                     type="email"
                     name="email"
                     onChange= {e => changeEmail(e.target.value)}
@@ -103,7 +103,7 @@ const NewCustomer = (props) => {
                 />
                 </Form.Group>
 
-                <Button type="submit" className="button" color="primary" >
+                <Button primary type="submit" className="button" >
                     Add Customer
                 </Button>
             </Form>

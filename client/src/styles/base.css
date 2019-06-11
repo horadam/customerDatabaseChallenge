@@ -45,15 +45,15 @@ html {
     align-items: center;
   }
 
-  .landingContainer a {
-    text-decoration: none;
-    color: white
-  }
+    .landingContainer a {
+      text-decoration: none;
+      color: white
+    }
 
-  .landingContainer .ui.primary.button {
-    width: 300px;
-    margin-top: 40px;
-  }
+    .landingContainer .ui.primary.button {
+      width: 300px;
+      margin-top: 40px;
+    }
 
   .formContainer{
     justify-content: space-evenly;
@@ -61,20 +61,6 @@ html {
     width:600px;
     margin: auto;
   }
-
-  label {
-    display: block;
-    /* text-transform: uppercase; */
-    font-size:12px;
-    font-weight: 100;
-    letter-spacing: 0.1em;
-    margin-top: 30px;
-}
-
-::placeholder {
-    color: rgb(61,94,118);
-    font-style: italic;
-}
 
 .wrapper {
   display: flex;
@@ -114,7 +100,7 @@ html {
   align-items: center
 }
 
-#searchCustomer{
+#searchCustomer {
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
   height: 37px;

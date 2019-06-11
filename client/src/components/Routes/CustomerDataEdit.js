@@ -49,11 +49,9 @@ const CustomerDataEdit = (props) => {
                         placeholder="john.doe@email.com"
                         margin="normal"
                         variant="outlined"
-                        inputProps={{ 'aria-label': 'bare' }}
+                        inputprops={{ 'aria-label': 'bare' }}
                         type="email"
                         name="email"
-                        // className="formInput"
-                        // label="email"
                         onChange= {e => changeEmail(e.target.value)}
                         value=  {email}
                     />
@@ -64,7 +62,6 @@ const CustomerDataEdit = (props) => {
                         type="text"
                         name="fname"
                         placeholder="John"
-                        // className="forminput"
                         onChange= {e => changeFirstName(e.target.value)}
                         value=  {fname}
                     />
@@ -112,7 +109,7 @@ const CustomerDataEdit = (props) => {
                     />
                     </Form.Group>
 
-                    <Button type="submit" className="button" color="primary" variant="contained">
+                    <Button primary type="submit" className="button">
                         Edit Data
                     </Button>
             </Form>

@@ -20,7 +20,7 @@ const Challenge1Home = () => {
 
     return (
 
-        <div class="wrapper">
+        <div className="wrapper">
             <HeaderBar/>
     
             <Header as='h2' textAlign='center'>
@@ -29,7 +29,7 @@ const Challenge1Home = () => {
             </Header>
         
            
-            <Form class="dataForm" onSubmit={handleSubmit}>
+            <Form className="dataForm" onSubmit={handleSubmit}>
             <Form.Field>
                 <Input
                     label=".csv file"

@@ -69,7 +69,7 @@ const CustomerDataViewUIUX = (props) => {
                                 Processing
                             </Table.Cell>
                             <Table.Cell>
-                                <a href=""> <Icon name='eye'/> View </a>
+                                <a href="/order/789"> <Icon name='eye'/> View </a>
                             </Table.Cell>
                         </Table.Row>
                         <Table.Row>
@@ -80,7 +80,7 @@ const CustomerDataViewUIUX = (props) => {
                                 Shipped
                             </Table.Cell>
                             <Table.Cell>
-                                <a href=""> <Icon name='eye'/> View </a>
+                                <a href="/order/456"> <Icon name='eye'/> View </a>
                             </Table.Cell>
                         </Table.Row>
                         <Table.Row positive>
@@ -91,7 +91,7 @@ const CustomerDataViewUIUX = (props) => {
                             Delivered 
                             </Table.Cell>
                             <Table.Cell>
-                                <a href=""> <Icon name='eye'/> View </a>
+                                <a href="/order/123"> <Icon name='eye'/> View </a>
                             </Table.Cell>
                         </Table.Row>
                     

@@ -62,7 +62,7 @@ const Challenge4Home = () => {
                 <Header.Content> Showing results for: {lastSearch}</Header.Content>
             </Header>
 
-            <Table celled>
+            <Table className={lastSearch === '' ? "hidden" : "table"} celled>
                 <Table.Header>
                 <Table.Row>
                     <Table.HeaderCell>First Name</Table.HeaderCell>
@@ -75,7 +75,7 @@ const Challenge4Home = () => {
 
                 <Table.Body>
                     {customers.map((customer, i) => (
-                        <Table.Row>
+                        <Table.Row key={'customer - ' + i} >
                             <Table.Cell>{customer.first_name}
                             </Table.Cell>
                             <Table.Cell>{customer.last_name}</Table.Cell>

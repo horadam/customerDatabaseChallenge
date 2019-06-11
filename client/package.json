@@ -8,8 +8,6 @@
     "moment": "^2.24.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-    "react-js-pagination": "^3.0.2",
-    "react-pagination-table": "^2.0.2",
     "react-redux": "7.1.0-alpha.4",
     "react-router-dom": "^5.0.0",
     "react-scripts": "3.0.0",

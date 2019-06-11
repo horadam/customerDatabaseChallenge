@@ -7,7 +7,7 @@ import { Button, Header, Icon } from 'semantic-ui-react'
 
 
 
-const Challenge2Home = (props) => {
+const Challenge2Home = () => {
 
     return (
         <div className="wrapper">

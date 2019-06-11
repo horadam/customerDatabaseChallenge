@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { connect } from 'react-redux'
+import { useSelector } from 'react-redux'
 import HeaderBar from '../HeaderBar'
 import { getCurrentCustomer, editCustomer } from '../../actions/actions'
 import moment from 'moment'
@@ -13,7 +13,7 @@ const CustomerDataEdit = (props) => {
         getCurrentCustomer(CustomerId)
     },[CustomerId])
 
-    const customer = props.currentCustomer
+    const customer = useSelector(appstate => appstate.currentCustomer)
 
     const [email, changeEmail] = useState(customer.email)
     const [fname, changeFirstName] = useState(customer.first_name)
@@ -121,14 +121,5 @@ const CustomerDataEdit = (props) => {
     )
 }
 
-
-
-
-
-function mapStateToProps(appState) {
-    return {
-      currentCustomer: appState.currentCustomer
-    }
-  }
   
-export default connect(mapStateToProps)(CustomerDataEdit)
+export default CustomerDataEdit

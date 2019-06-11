@@ -2,7 +2,7 @@ import React, { useEffect} from 'react'
 import { useSelector } from 'react-redux'
 import { getCurrentCustomerJSON } from '../../actions/actions2'
 import HeaderBar from '../HeaderBar'
-import { Icon, Table, Header, List } from 'semantic-ui-react'
+import { Icon, Table, Header, List, Divider } from 'semantic-ui-react'
 import moment from 'moment'
 
 
@@ -33,15 +33,20 @@ const CustomerDataViewUIUX = (props) => {
                         <p><span>Location:</span> {customer.longitude}, {customer.latitude}</p>
                     </div>
                 </div>
+
+                <Divider />
                 <Header as='h3'>
                     <Header.Content>Interests</Header.Content>
                 </Header>
+
                 <List className="interestsList">
                     <List.Item icon='camera retro' content='Photography' />
                     <List.Item icon='cube' content='Speed Cubes' />
                     <List.Item icon='game' content='Fortnite'/>
                     <List.Item icon='film' content='Mother of Dragons' />
                 </List>
+
+                <Divider />
                 <Header as='h3'>
                     <Header.Content>Orders</Header.Content>
                 </Header>

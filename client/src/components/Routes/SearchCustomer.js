@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react'
 import { searchCustomer } from '../../actions/actions'
-import {connect} from 'react-redux'
+import { useSelector } from 'react-redux'
 import  { Link } from 'react-router-dom'
 import { Input, Button, Header, Icon } from 'semantic-ui-react'
 
 
-const SearchCustomer = (props) => {
+const SearchCustomer = () => {
 
     const [customerSearched, setCustomer] = useState('')
     const [lastSearch, setLastSearch] = useState('')
@@ -22,7 +22,7 @@ const SearchCustomer = (props) => {
         setCustomer('')
     }
 
-    const customers = props.customersFound
+    const customers = useSelector(appstate => appstate.customersFound)
 
     return (
         <div className="searchCustomer">
@@ -68,10 +68,5 @@ const SearchCustomer = (props) => {
     )
 }
 
-function mapStateToProps(appState){
-    return{
-        customersFound: appState.customersFound
-    }
-}
 
-export default connect(mapStateToProps)(SearchCustomer)
+export default SearchCustomer

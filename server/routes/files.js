@@ -1,5 +1,4 @@
 const express = require('express')
-// const http = require('http');
 const fs = require('fs');
 const multer = require('multer');
 const csv = require('fast-csv');
@@ -8,20 +7,17 @@ const conn = require("../db")
 const upload = multer({ dest: 'tmp/csv/' });
 
 router.post('/files', upload.array('datafile', 2), (req, res)  => {
+
     const fileRowsData = [];
     const fileRowsMap = [];
-
-    // console.log('file', req.files)
   
 
     //open uploaded file
     csv.fromPath(req.files[0].path)
       .on("data", function (data) {
-        //   console.log('here')
         fileRowsData.push(data); // push each row
       })
       .on("end", function () {
-        // console.log(fileRowsData)
         fs.unlinkSync(req.files[0].path)
         csv.fromPath(req.files[1].path)
         .on("data", function (data) {
@@ -29,8 +25,6 @@ router.post('/files', upload.array('datafile', 2), (req, res)  => {
             fileRowsMap.push(data); // push each row
         }) 
         .on("end", function () {
-            // console.log(fileRowsMap)
-            // console.log(fileRowsData)
             fs.unlinkSync(req.files[1].path) // remove temp file
         //process "fileRows" and respond
 
@@ -41,8 +35,6 @@ router.post('/files', upload.array('datafile', 2), (req, res)  => {
           .map((fields, i) => {
             let obj = {}
 
-            // console.log('\n\n\n', fieldnames)
-
             fieldnames[0].forEach((field, j) => {
               var keypos = fileRowsMap[1].indexOf(field)
               obj[fileRowsMap[0][keypos]] = fields[j]
@@ -50,8 +42,6 @@ router.post('/files', upload.array('datafile', 2), (req, res)  => {
 
             return obj
           })
-
-          console.log(objdata)
 
           insertData(objdata)
 

@@ -24,16 +24,16 @@ export function searchCustomer(customerSearched) {
             payload: resp.data.results
         })
     })
-  }
+}
 
-  export function getCurrentCustomer(CustomerId) {
+export function getCurrentCustomer(CustomerId) {
     axios.get(`/api/customers/current?Id=${CustomerId}`).then(resp => {
         store.dispatch({
             type: 'CURRENT_CUSTOMER',
             payload: resp.data.results[0]
         })
     })
-  }
+}
 
   //FILE UPLOAD
   export function fileUpload(file1, file2) {

@@ -4,7 +4,7 @@ import HeaderBar from '../HeaderBar'
 import { Button } from 'semantic-ui-react'
 
 
-const Landing = (props) => {
+const Landing = () => {
 
     return (
         <div>

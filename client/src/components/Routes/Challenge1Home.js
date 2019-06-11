@@ -5,22 +5,17 @@ import { Input, Button, Form, Header, Icon } from 'semantic-ui-react'
 
 
 
-const Challenge1Home = (props) => {
+const Challenge1Home = () => {
 
     const [dataFile, changeDataFile] = useState({})
     const [mapFile, changeMapFile] = useState({})
 
-
-
     function handleSubmit (e) {
         e.preventDefault()
-        console.log(dataFile, mapFile)
+        
         fileUpload(dataFile, mapFile).then(resp => {
-            console.log('res', resp)
         }).catch(err => {
-            console.log('err', err)
         })
-  
     }
 
     return (

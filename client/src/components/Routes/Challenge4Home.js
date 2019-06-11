@@ -57,6 +57,11 @@ const Challenge4Home = () => {
             
             </form>
 
+            < Header as='h5' textAlign='center' className = {lastSearch === '' ? "hidden" : "customerFound"}>
+                <Icon name='search'/>
+                <Header.Content> Showing results for: {lastSearch}</Header.Content>
+            </Header>
+
             <Table celled>
                 <Table.Header>
                 <Table.Row>

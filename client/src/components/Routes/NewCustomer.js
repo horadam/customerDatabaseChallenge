@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import HeaderBar from '../HeaderBar'
-
 import { addCustomer } from '../../actions/actions'
 import moment from 'moment'
 import { Button, Header, Icon, Form } from 'semantic-ui-react'
@@ -46,8 +45,6 @@ const NewCustomer = (props) => {
                     inputProps={{ 'aria-label': 'bare' }}
                     type="email"
                     name="email"
-                    // className="formInput"
-                    // label="email"
                     onChange= {e => changeEmail(e.target.value)}
                     value=  {email}
                 />
@@ -58,7 +55,6 @@ const NewCustomer = (props) => {
                     type="text"
                     name="fname"
                     placeholder="John"
-                    // className="forminput"
                     onChange= {e => changeFirstName(e.target.value)}
                     value=  {fname}
                 />

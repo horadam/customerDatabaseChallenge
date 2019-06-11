@@ -8,9 +8,7 @@ import Challenge1Home from './Routes/Challenge1Home'
 import Challenge2Home from './Routes/Challenge2Home'
 import Challenge3Home from './Routes/Challenge3Home'
 import Challenge4Home from './Routes/Challenge4Home'
-
 import NewCustomer from './Routes/NewCustomer'
-// import SearchCustomer from './Routes/SearchCustomer'
 import CustomerDataView from './Routes/CustomerDataView'
 import CustomerDataEdit from './Routes/CustomerDataEdit'
 import CustomerDataViewJSON from './Routes/CustomerDataViewJSON'
@@ -24,10 +22,10 @@ const App = () => {
         <Router>
           <Switch>
             <Route path="/" exact component={Landing} />
+            
             <Route path="/challenge1" exact component={Challenge1Home} />
 
             <Route path="/challenge2" exact component={Challenge2Home} />
-            {/* <Route path="/searchCustomer" exact component={SearchCustomer} /> */}
             <Route path="/newCustomer" exact component={NewCustomer} />
             <Route path="/customer/:id" exact component={CustomerDataView} />
             <Route path="/customer/edit/:id" exact component={CustomerDataEdit} />

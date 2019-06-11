@@ -6,7 +6,7 @@ import { Input, Button, Header, Icon } from 'semantic-ui-react'
 import HeaderBar from '../HeaderBar'
 
 
-const Challenge3Home = (props) => {
+const Challenge3Home = () => {
 
     const [customerSearched, setCustomer] = useState('')
     const [lastSearch, setLastSearch] = useState('')
@@ -76,11 +76,5 @@ const Challenge3Home = (props) => {
         </div>
     )
 }
-
-// function mapStateToProps(appState){
-//     return{
-//         customersFound: appState.customersFound
-//     }
-// }
 
 export default Challenge3Home

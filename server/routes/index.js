@@ -13,7 +13,6 @@ router.post('/customers/new', (req, res, next) => {
   `
 
   conn.query(sql, [req.body.email, req.body.fname, req.body.lname, req.body.ip, req.body.lat, req.body.long, req.body.timeStamp], (err, results, fields) => {
-    console.log(err)
     res.json({
       message: 'customer added'
     })
@@ -47,7 +46,6 @@ router.delete('/customers/remove', (req, res, next) => {
   `
 
   conn.query(sql, [req.query.id], (err, results, fields) => {
-    console.log(results)
       res.json({
       message: "customer removed from database"
       })
@@ -89,7 +87,6 @@ router.get('/customers/current', (req, res, next) => {
     `
 
   conn.query(sql, [req.query.Id],(err, results, fields) => {
-    console.log(results)
     res.json({
       results
     })

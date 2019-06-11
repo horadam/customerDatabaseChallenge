@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react'
 import { useSelector } from 'react-redux'
 import { searchCustomerJSON } from '../../actions/actions2'
 import { Link } from 'react-router-dom'
-import { connect } from 'react-redux'
 import { Input, Button, Header, Icon } from 'semantic-ui-react'
 import HeaderBar from '../HeaderBar'
 

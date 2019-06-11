@@ -22,6 +22,7 @@ html {
   background-color: white;
   width: 100%;
   height: 100px;
+  margin-bottom: 20px;
   }
 
     #headerText {
@@ -141,6 +142,37 @@ html {
   font-size: 18px;
 }
 
-.customerData span {
+.customerData span, .customerProfileCard span {
   font-weight: bold;
+}
+
+.ui.table {
+  max-width: 700px;
+}
+
+.customerProfileCard {
+  display: flex;
+  width: 600px;
+  justify-content: center;
+}
+
+.ui.icon.header.aligned {
+  margin-left:0;
+  margin-right: 40px;
+}
+
+.customerProfileCard p {
+  margin-block-end: 0.6em;
+}
+
+.interestsOrders {
+  display: flex;
+}
+.ui.list.interestsList {
+  display: flex;
+}
+
+.interestsList.ui.list>.item {
+  margin-left: 30px;
+  padding: 0;
 }

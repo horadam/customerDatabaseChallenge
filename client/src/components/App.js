@@ -15,6 +15,8 @@ import CustomerDataView from './Routes/CustomerDataView'
 import CustomerDataEdit from './Routes/CustomerDataEdit'
 import CustomerDataViewJSON from './Routes/CustomerDataViewJSON'
 
+import CustomerDataViewUIUX from './Routes/CustomerDataViewUIUX'
+
 const App = () => {
   
     return (
@@ -34,6 +36,7 @@ const App = () => {
             <Route path="/customer/view/:id" exact component={CustomerDataViewJSON} />
 
             <Route path="/challenge4" exact component={Challenge4Home} />
+            <Route path="/customerUIUX/view/:id" exact component={CustomerDataViewUIUX} />
 
             
           </Switch>

@@ -33,7 +33,7 @@ const CustomerDataEdit = (props) => {
    
 
     return (
-        <div class="wrapper">
+        <div className="wrapper">
             <HeaderBar />
 
             <Header as='h2' textAlign='center'>
